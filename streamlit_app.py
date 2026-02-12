@@ -4,9 +4,9 @@ import os
 import pandas as pd
 
 
-# =============================
+
 # Page Config
-# =============================
+
 
 st.set_page_config(
     page_title="Loan Approval Predictor",
@@ -15,12 +15,12 @@ st.set_page_config(
 )
 
 st.title("💰 Loan Approval Prediction System")
-st.write("AI-powered system to evaluate loan eligibility and recommend optimal loan value.")
+#st.write("AI-powered system to evaluate loan eligibility and recommend optimal loan value.")
 
 
-# =============================
+
 # Load Models (Cached)
-# =============================
+
 
 @st.cache_resource
 def load_models():
@@ -35,9 +35,8 @@ def load_models():
 clf, reg = load_models()
 
 
-# =============================
 # Sidebar Inputs
-# =============================
+
 
 st.sidebar.header("Applicant Details")
 
@@ -110,9 +109,8 @@ bank_asset_value = st.sidebar.number_input(
 )
 
 
-# =============================
 # Prepare Input Data
-# =============================
+
 
 input_data = pd.DataFrame([{
     "no_of_dependents": no_of_dependents,
@@ -133,9 +131,8 @@ input_data = pd.DataFrame([{
 input_data = input_data[clf.feature_names_in_]
 
 
-# =============================
 # Prediction Button
-# =============================
+
 
 if st.button("Predict Loan Approval", use_container_width=True):
 
