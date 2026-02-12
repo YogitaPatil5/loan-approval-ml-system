@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints
+
+# if using conda
+env/
+*.pkl
+
+.DS_Store
